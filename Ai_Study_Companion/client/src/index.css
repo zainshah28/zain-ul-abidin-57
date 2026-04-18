@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+:root {
+  /* Modern University Palette */
+  --primary: #5B4E8C;
+  --primary-light: #7D6BA8;
+  --primary-dark: #3D2F5C;
+  --accent-purple: #A855F7;
+  --accent-cyan: #06B6D4;
+  --accent-pink: #EC4899;
+  --bg-0: #f8f7fc;
+  --bg-1: #ede9f6;
+  --bg-2: #e0d7f1;
+  --ink-900: #1a0f3f;
+  --ink-700: #3d2f5c;
+  --card: rgba(255, 255, 255, 0.85);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+.dark {
+  --primary: #6B5B9D;
+  --primary-light: #8B7BAD;
+  --primary-dark: #4D3F6D;
+  --accent-purple: #C084FC;
+  --accent-cyan: #22D3EE;
+  --accent-pink: #F472B6;
+  --bg-0: #0f0a1a;
+  --bg-1: #1a1120;
+  --bg-2: #2d1f47;
+  --ink-900: #f3f0ff;
+  --ink-700: #d8cef5;
+  --card: rgba(30, 20, 50, 0.8);
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.15), transparent 40%),
+    radial-gradient(circle at 15% 80%, rgba(6, 182, 212, 0.12), transparent 45%),
+    linear-gradient(135deg, #0f0a1a 0%, #1a1120 50%, #2d1f47 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink-900);
+  background:
+    radial-gradient(circle at 85% 15%, rgba(168, 85, 247, 0.25), transparent 40%),
+    radial-gradient(circle at 15% 80%, rgba(6, 182, 212, 0.2), transparent 45%),
+    linear-gradient(135deg, var(--bg-0) 0%, var(--bg-1) 50%, var(--bg-2) 100%);
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 1.375rem;
+  color: var(--primary);
+}
+
+h3 {
+  font-size: 1.125rem;
+  color: var(--primary-light);
+}
+
+.serif {
+  font-family: "Instrument Serif", serif;
+  font-weight: 600;
+}
+
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(91, 78, 140, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(91, 78, 140, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  border-color: rgba(168, 85, 247, 0.25);
+  box-shadow: 
+    0 12px 48px rgba(168, 85, 247, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.dark .glass {
+  border-color: rgba(168, 85, 247, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(168, 85, 247, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.dark .glass:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 
+    0 12px 48px rgba(168, 85, 247, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient Button */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+  color: white;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  transform: none;
+  cursor: not-allowed;
+}
+
+/* Accent Elements */
+.accent-text {
+  background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.accent-border {
+  border-color: var(--accent-purple);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(6, 182, 212, 0.2));
+  color: var(--primary-dark);
+}
+
+.dark .badge {
+  color: var(--accent-purple);
+}
+
+.fade-up {
+  animation: fadeUp 0.55s ease both;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth transitions */
+button, a {
+  transition: all 0.2s ease;
+}
